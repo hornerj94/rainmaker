@@ -1,0 +1,58 @@
+version: "2.0"
+
+intents:
+  - greet
+  - inform
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+entities:
+  - location
+
+slots:
+  location:
+    type: text
+
+actions:
+- utter_greet
+- utter_goodbye
+- utter_iamabot
+- utter_ask_location
+- weather_action
+
+responses:
+  utter_ask_location:
+  - text: "which city you want to check for?"
+  - text: "In what location?"
+  
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hey! How may i assist you?"
+  - text: "What I can do for you today?"
+  - text: "Hi, there!!"
+  - text: "Nice to meet you."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Talk to you later."
+
+  utter_iamabot:
+  - text: "I am a bot, powered by rain energy."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
