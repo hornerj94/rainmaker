@@ -5,11 +5,11 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: inform
+  - intent: ask_weather_without_location
   - action: utter_ask_location
-  - intent: inform
+  - intent: ask_weather_in_location
     entities:
-    - location: "Italy"
+    - location: "Ofterdingen"
   - action: weather_action
   - intent: goodbye
   - action: utter_goodbye
@@ -18,36 +18,9 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: inform
+  - intent: ask_weather_in_location
     entities:
-    - location: "London"
+    - location: "Reutlingen"
   - action: weather_action
   - intent: goodbye
-  - action: utter_goodbye
-
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
   - action: utter_goodbye
