@@ -2,12 +2,12 @@ version: "2.0"
 
 intents:
   - greet
+  - ask_weather_without_location
+  - ask_weather_in_location
   - inform
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
 
 entities:
@@ -19,39 +19,35 @@ slots:
 
 actions:
 - utter_greet
+- utter_ask_location
+- utter_did_that_help
 - utter_goodbye
 - utter_iamabot
-- utter_ask_location
 - weather_action
 
 responses:
-  utter_ask_location:
-  - text: "which city you want to check for?"
-  - text: "In what location?"
-  
   utter_greet:
-  - text: "Hey! How are you?"
-  - text: "Hey! How may i assist you?"
-  - text: "What I can do for you today?"
-  - text: "Hi, there!!"
-  - text: "Nice to meet you."
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: "Hey! Wie geht's?"
+  - text: "Hey! Wie kann ich Ihnen helfen?"
+  - text: "Was kann ich heute für sie tun?"
+  - text: "Hallo"
+  - text: "Freut mich dich kennen zu lernen."
+  
+  utter_ask_location:
+  - text: "In welcher Stadt?"
+  - text: "An welchem Ort?"
+  - text: "Wo?"
+  
   utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hat Ihnen das geholfen?"
 
   utter_goodbye:
-  - text: "Bye"
-  - text: "Talk to you later."
+  - text: "Tschüss"
+  - text: "Tschüssi"
+  - text: "Wir sprechen uns noch."
 
   utter_iamabot:
-  - text: "I am a bot, powered by rain energy."
+  - text: "Ich bin ein R-O-B-O-T-E-R."
 
 session_config:
   session_expiration_time: 60

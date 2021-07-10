@@ -16,7 +16,7 @@ class WeatherAction(Action):
 
         city = tracker.get_slot('location')
         temperature=Weather(city)['temp']
-        response = "The current temperature at {} is {} degree Celsius.".format(city,temperature)
+        response = "Die aktuelle Temperatur in {} ist {} Grad Celsius.".format(city,temperature)
         
         dispatcher.utter_message(response)
 
