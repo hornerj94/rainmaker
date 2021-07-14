@@ -1,7 +1,27 @@
 version: "2.0"
 
 stories:
-- story: No location specification
+- story: weather check 1
+  steps:
+  - intent: ask_weather_without_location
+  - action: utter_ask_location
+  - intent: ask_weather_in_location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: weather check 2
+  steps:
+  - intent: ask_weather_in_location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: greet weather check 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -14,7 +34,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: Directly specify location
+- story: greet weather check 2
   steps:
   - intent: greet
   - action: utter_greet
