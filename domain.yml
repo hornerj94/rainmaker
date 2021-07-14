@@ -2,6 +2,8 @@ version: "2.0"
 
 intents:
   - greet
+  - ask_weather_without_location
+  - ask_weather_in_location
   - ask_current_temperature_without_location
   - ask_current_temperature_in_location
   - inform
@@ -23,16 +25,17 @@ actions:
 - utter_did_that_help
 - utter_goodbye
 - utter_iamabot
+- weather_action
 - current_temperature_action
 
 responses:
   utter_greet:
   - text: "Hey! Wie kann ich Ihnen helfen?"
   - text: "Was kann ich heute für sie tun?"
-  - text: "Hallo"
-  - text: "Freut mich Sie kennen zu lernen."
+  - text: "Hallo. Wie kann ich Ihnen heute weiterhelfen"
+  - text: "Freut mich Sie kennen zu lernen. Was kann ich für sie tun?"
   - text: "Wie kann ich Ihnen helfen?"
-  - text: "Hi"
+  - text: "Hi. Wie kann ich Ihnen weiterhelfen?"
   - text: "Hallo, schön, Sie zu sehen. Wie kann ich Ihnen helfen?"
   
   utter_ask_location:
