@@ -6,17 +6,23 @@ nlu:
     - Hallo
     - Hi
     - Guten Morgen
+    - Hey
     
+- intent: ask_weather_without_location
+  examples: |
+   - Wie ist das Wetter 
+
+- intent: ask_weather_in_location
+  examples: |
+   - Wie ist das Wetter in [Köln]{"entity": "location"}
+   - Wie ist es in [Frankfurt]{"entity": "location"}
+
 - intent: ask_current_temperature_without_location
   examples: |
     - Wie viel Grad hat es
-    - Wie viel Grad hat es im Moment
     - Wie warm ist es
-    - Wie warm ist es im Moment
     - Ich möchte wissen wie warm es ist
     - Wie ist die Temperatur
-  # Move to seperate intent
-  #  - Wie ist das Wetter 
   
 - intent: ask_current_temperature_in_location
   examples: |
@@ -34,9 +40,6 @@ nlu:
     - Ich würde gerne die Temperatur in [Neckartailfingen]{"entity": "location"} wissen
     - Wie ist die Temperatur in [Tübingen]{"entity": "location"}
     - Was ist mit [Darmstadt]{"entity": "location"}
-  # Move to seperate intent
-  #  - Wie ist das Wetter in [Köln]{"entity": "location"}
-  #  - Wie ist es in [Frankfurt]{"entity": "location"}
 
 
 - intent: goodbye

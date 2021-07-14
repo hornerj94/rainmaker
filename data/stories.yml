@@ -1,11 +1,59 @@
 version: "2.0"
 
 stories:
+#--- Weather ---#
+
+- story: weather check 1
+  steps:
+  - intent: ask_weather_without_location
+  - action: utter_ask_location
+  - intent: ask_weather_in_location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: weather check 2
+  steps:
+  - intent: ask_weather_in_location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: greet weather check 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_without_location
+  - action: utter_ask_location
+  - intent: ask_weather_in_location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: greet weather check 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_in_location
+    entities:
+    - location: "Reutlingen"
+  - action: weather_action
+  - intent: goodbye
+  - action: utter_goodbye
+
+#--- Temperature ---#
+
 - story: current temperature check 1
   steps:
-  - intent: ask_temperature_without_location
+  - intent: ask_current_temperature_without_location
   - action: utter_ask_location
-  - intent: ask_temperature_in_location
+  - intent: ask_current_temperature_in_location
     entities:
     - location: "Ofterdingen"
   - action: current_temperature_action
@@ -14,7 +62,7 @@ stories:
 
 - story: current temperature check 2
   steps:
-  - intent: ask_temperature_in_location
+  - intent: ask_current_temperature_in_location
     entities:
     - location: "Ofterdingen"
   - action: current_temperature_action
@@ -25,9 +73,9 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_temperature_without_location
+  - intent: ask_current_temperature_without_location
   - action: utter_ask_location
-  - intent: ask_temperature_in_location
+  - intent: ask_current_temperature_in_location
     entities:
     - location: "Ofterdingen"
   - action: current_temperature_action
@@ -38,7 +86,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_temperature_in_location
+  - intent: ask_current_temperature_in_location
     entities:
     - location: "Reutlingen"
   - action: current_temperature_action

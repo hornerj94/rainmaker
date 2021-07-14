@@ -14,16 +14,42 @@ class CurrentTemperatureAction(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, 
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        city = tracker.get_slot('location')
+        location = tracker.get_slot('location')
 
-        data = getWeatherData(city)
+        data = getWeatherData(location)
         mainData = data['main']
         temperature = mainData['temp']
         response = "Die aktuelle Temperatur in {} ist {} Grad Celsius.".format(
-            city,temperature)
+            location, temperature)
         
         dispatcher.utter_message(response)
 
-        return [SlotSet('location',city)]
+        return [SlotSet('location', location)]
+
+#------------------------------------------------------------------------------
+
+class WeatherAction(Action):
+#------------------------------------------------------------------------------
+    def name(self) -> Text:
+        return "weather_action"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, 
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        location = tracker.get_slot('location')
+
+        data = getWeatherData(location)
+        mainData = data['main']
+        
+        message = "Aktuelle Temperatur {}: {} Grad Celsius." + "\n" \
+            + "Gefühlte Temperatur: {} Grad Celsius." + "\n" \
+            + "Erwartete Minimaltemperatur: {} Grad Celsius." + "\n" \
+            + "Erwartete Maxmaltemperatur: {} Grad Celsius." + "\n"                
+        response = message.format(location, mainData['temp'], \
+            mainData['feels_like'], mainData['temp_min'], mainData['temp_max'])
+        
+        dispatcher.utter_message(response)
+
+        return [SlotSet('location', location)]
 
 #------------------------------------------------------------------------------
