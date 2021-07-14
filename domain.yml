@@ -27,11 +27,13 @@ actions:
 
 responses:
   utter_greet:
-  - text: "Hey! Wie geht's?"
   - text: "Hey! Wie kann ich Ihnen helfen?"
   - text: "Was kann ich heute für sie tun?"
   - text: "Hallo"
-  - text: "Freut mich dich kennen zu lernen."
+  - text: "Freut mich Sie kennen zu lernen."
+  - text: "Wie kann ich Ihnen helfen?"
+  - text: "Hi"
+  - text: "Hallo, schön, Sie zu sehen. Wie kann ich Ihnen helfen?"
   
   utter_ask_location:
   - text: "In welcher Stadt?"
@@ -43,8 +45,11 @@ responses:
 
   utter_goodbye:
   - text: "Tschüss"
-  - text: "Tschüssi"
-  - text: "Wir sprechen uns noch."
+  - text: "Bis zum nächsten mal"
+  - text: "Auf Wiedersehen"
+  - text: "Bye"
+  - text: "Tschüss, auf Wiedersehen"
+  - text: "Ciao"
 
   utter_iamabot:
   - text: "Ich bin ein R-O-B-O-T-E-R."
