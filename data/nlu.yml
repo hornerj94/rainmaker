@@ -10,9 +10,10 @@ nlu:
 - intent: ask_weather_without_location
   examples: |
     - Wie viel Grad hat es
-    - Wie warm ist es?
+    - Wie warm ist es
     - Ich möchte wissen wie warm es ist
-    - Wie ist das Wetter?
+    - Wie ist die Temperatur
+    - Wie ist das Wetter
   
 - intent: ask_weather_in_location
   examples: |
@@ -29,12 +30,15 @@ nlu:
     - Temperatur in [Reutlingen]{"entity": "location"}
     - Wie warm ist es in [Ofterdingen]{"entity": "location"}
     - Wie heiss ist es in [Freiburg]{"entity": "location"}
+    - Ich würde gerne die Temperatur in [Neckartailfingen]{"entity": "location"} wissen
+    - Wie ist die Temperatur in [Tübingen]{"entity": "location"}
+    - Was ist mit [Darmstadt]{"entity": "location"}
 
 - intent: goodbye
   examples: |
     - Auf wiedersehen
     - Gute Nacht
-    - bye
+    - Bye
     - Schönen Tag
     - Man sieht sich
     - Bis später
@@ -59,7 +63,7 @@ nlu:
 
 - intent: bot_challenge
   examples: |
-    - Bist du ein bot?
+    - Bist du ein Bot?
     - Bist du ein Mensch?
-    - Rede ich mit einem bot?
+    - Rede ich mit einem Bot?
     - Rede ich mit einem Mensch?
