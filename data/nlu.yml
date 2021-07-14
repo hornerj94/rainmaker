@@ -7,16 +7,18 @@ nlu:
     - Hi
     - Guten Morgen
     
-- intent: ask_temperature_without_location
+- intent: ask_current_temperature_without_location
   examples: |
     - Wie viel Grad hat es
+    - Wie viel Grad hat es im Moment
     - Wie warm ist es
+    - Wie warm ist es im Moment
     - Ich möchte wissen wie warm es ist
     - Wie ist die Temperatur
   # Move to seperate intent
   #  - Wie ist das Wetter 
   
-- intent: ask_temperature_in_location
+- intent: ask_current_temperature_in_location
   examples: |
     - Wie hoch ist die Temperatur in [Nürnberg]{"entity": "location"} heute
     - Sag mir die Temperatur in [Kirchheim]{"entity": "location"}

@@ -1,27 +1,27 @@
 version: "2.0"
 
 stories:
-- story: temperature check 1
+- story: current temperature check 1
   steps:
   - intent: ask_temperature_without_location
   - action: utter_ask_location
   - intent: ask_temperature_in_location
     entities:
     - location: "Ofterdingen"
-  - action: temperature_action
+  - action: current_temperature_action
   - intent: goodbye
   - action: utter_goodbye
 
-- story: temperature check 2
+- story: current temperature check 2
   steps:
   - intent: ask_temperature_in_location
     entities:
     - location: "Ofterdingen"
-  - action: temperature_action
+  - action: current_temperature_action
   - intent: goodbye
   - action: utter_goodbye
 
-- story: greet temperature check 1
+- story: greet current temperature check 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -30,18 +30,18 @@ stories:
   - intent: ask_temperature_in_location
     entities:
     - location: "Ofterdingen"
-  - action: temperature_action
+  - action: current_temperature_action
   - intent: goodbye
   - action: utter_goodbye
 
-- story: greet temperature check 2
+- story: greet current temperature check 2
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_temperature_in_location
     entities:
     - location: "Reutlingen"
-  - action: temperature_action
+  - action: current_temperature_action
   - intent: goodbye
   - action: utter_goodbye
 

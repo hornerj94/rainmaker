@@ -2,8 +2,8 @@ version: "2.0"
 
 intents:
   - greet
-  - ask_temperature_without_location
-  - ask_temperature_in_location
+  - ask_current_temperature_without_location
+  - ask_current_temperature_in_location
   - inform
   - goodbye
   - affirm
@@ -23,7 +23,7 @@ actions:
 - utter_did_that_help
 - utter_goodbye
 - utter_iamabot
-- temperature_action
+- current_temperature_action
 
 responses:
   utter_greet:
