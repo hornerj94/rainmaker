@@ -17,13 +17,18 @@ class CurrentTemperatureAction(Action):
         location = tracker.get_slot('location')
 
         data = getWeatherData(location)
-        mainData = data['main']
-        temperature = mainData['temp']
-        response = "Die aktuelle Temperatur in {} ist {} Grad Celsius.".format(
-            location, temperature)
-        
-        dispatcher.utter_message(response)
 
+        if data['cod'] != 200:
+            message = "Für {} konnten keine Daten ermittelt werden."                
+            response = message.format(location)
+        else:
+            mainData = data['main']
+
+            message = "Die aktuelle Temperatur in {} ist {} Grad Celsius."                
+            response = message.format(location, mainData['temp'])
+            
+        dispatcher.utter_message(response)
+        
         return [SlotSet('location', location)]
 
 #------------------------------------------------------------------------------
@@ -39,15 +44,28 @@ class WeatherAction(Action):
         location = tracker.get_slot('location')
 
         data = getWeatherData(location)
-        mainData = data['main']
+
+        if data['cod'] != 200:
+            message = "Für {} konnten keine Daten ermittelt werden."                
+            response = message.format(location)
+        else:
+            selection = tracker.get_slot('selection')
+
+            print(tracker.get_slot('selection'))
         
-        message = "Aktuelle Temperatur {}: {} Grad Celsius." + "\n" \
-            + "Gefühlte Temperatur: {} Grad Celsius." + "\n" \
-            + "Erwartete Minimaltemperatur: {} Grad Celsius." + "\n" \
-            + "Erwartete Maxmaltemperatur: {} Grad Celsius." + "\n"                
-        response = message.format(location, mainData['temp'], \
-            mainData['feels_like'], mainData['temp_min'], mainData['temp_max'])
-        
+            mainData = data['main']
+
+            if selection == "Wetter":        
+                message = "Aktuelle Temperatur {}: {} Grad Celsius." + "\n" \
+                    + "Gefühlte Temperatur: {} Grad Celsius." + "\n" \
+                    + "Erwartete Minimaltemperatur: {} Grad Celsius." + "\n" \
+                    + "Erwartete Maxmaltemperatur: {} Grad Celsius." + "\n"                
+                response = message.format(location, mainData['temp'], \
+                    mainData['feels_like'], mainData['temp_min'], mainData['temp_max'])
+            elif selection == "Temperatur":
+                message = "Die aktuelle Temperatur in {} ist {} Grad Celsius."                
+                response = message.format(location, mainData['temp'])
+
         dispatcher.utter_message(response)
 
         return [SlotSet('location', location)]

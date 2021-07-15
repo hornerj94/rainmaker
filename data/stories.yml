@@ -1,41 +1,27 @@
 version: "2.0"
 
 stories:
-#--- Weather ---#
-
 - story: weather check 1
   steps:
-  - intent: ask_weather_without_location
+  - intent: temperature
+    entities:
+    - selection: "Temperatur"
   - action: utter_ask_location
-  - intent: ask_weather_in_location
+  - intent: location
     entities:
     - location: "Ofterdingen"
   - action: weather_action
 
-- story: weather check 2
+- story: temperature check 1
   steps:
-  - intent: ask_weather_in_location
+  - intent: weather
     entities:
-    - location: "Köln"
-  - action: weather_action
-
-#--- Temperature ---#
-
-- story: current temperature check 1
-  steps:
-  - intent: ask_current_temperature_without_location
+    - selection: "Wetter"
   - action: utter_ask_location
-  - intent: ask_current_temperature_in_location
+  - intent: location
     entities:
     - location: "Ofterdingen"
-  - action: current_temperature_action
-
-- story: current temperature check 2
-  steps:
-  - intent: ask_current_temperature_in_location
-    entities:
-    - location: "Köln"
-  - action: current_temperature_action
+  - action: weather_action
 
 # Add stories for humidity
 # Add stories for clouds, sunny ...

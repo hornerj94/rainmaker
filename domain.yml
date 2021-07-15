@@ -1,23 +1,31 @@
 version: "2.0"
 
 intents:
+  - location
+  - temperature
+  - weather
   - greet
-  - ask_weather_without_location
-  - ask_weather_in_location
-  - ask_current_temperature_without_location
-  - ask_current_temperature_in_location
   - inform
   - goodbye
   - affirm
   - deny
   - bot_challenge
+  - nlu_fallback
+  - thank_you
+  - out_of_scope
+
 
 entities:
   - location
+  - selection
 
 slots:
   location:
     type: text
+    influence_conversation: false
+  selection:
+    type: text
+    influence_conversation: false
 
 actions:
 - utter_greet
@@ -30,16 +38,18 @@ actions:
 
 responses:
   utter_greet:
-  - text: "Hey! Wie kann ich Ihnen helfen?"
-  - text: "Was kann ich heute für sie tun?"
-  - text: "Hallo. Wie kann ich Ihnen heute weiterhelfen"
-  - text: "Freut mich Sie kennen zu lernen. Was kann ich für sie tun?"
-  - text: "Wie kann ich Ihnen helfen?"
-  - text: "Hi. Wie kann ich Ihnen weiterhelfen?"
-  - text: "Hallo, schön, Sie zu sehen. Wie kann ich Ihnen helfen?"
-  
+  - text: "Hallo. Was genau möchten Sie wissen?"
+    buttons:
+    -
+      title: "Aktuelle Temperatur"
+      payload: /temperature{{"selection":"Temperatur"}}
+    -
+      title: "Temperatur (Details)"
+      payload: /weather{{"selection":"Wetter"}}
+  #- text: "Freut mich Sie kennen zu lernen. Was genau möchten Sie wissen?"
+  #- text: "Hallo, schön, Sie zu sehen. Was genau möchten Sie wissen?"
+
   utter_ask_location:
-  - text: "In welcher Stadt?"
   - text: "An welchem Ort?"
   - text: "Wo?"
   
@@ -57,6 +67,15 @@ responses:
   utter_iamabot:
   - text: "Ich bin ein R-O-B-O-T-E-R."
 
+  utter_out_of_scope:
+  - text: Tut mir leid, ich bin nicht sicher, wie ich darauf antworten soll.
+
+  utter_noworries:
+  - text: Kein Problem. Haben Sie weitere Fragen?
+
+  utter_default:
+  - text: Das habe ich nicht ganz verstanden. Könnten Sie es anders formulieren?
+
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false

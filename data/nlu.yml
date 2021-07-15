@@ -8,30 +8,37 @@ nlu:
     - Guten Morgen
     - Hey
     
-- intent: ask_weather_without_location
+- intent: temperature
   examples: |
-   - Wie ist das Wetter 
-   - Wie sieht es aus
+    - Wie ist die [Temperatur]{"entity": "selection"}?
+    - Welche [Temperatur]{"entity": "selection"} hat es?
 
-- intent: ask_weather_in_location
+- intent: weather
   examples: |
-   - Wie ist das Wetter in [Köln]{"entity": "location"}
-   - Wie sieht es aus in [Reutlingen]{"entity": "location"}
-   - Wie ist es in [Frankfurt]{"entity": "location"}
-   - Und in [Darmstadt]{"entity": "location"}
-   - Was ist mit [Tübingen]{"entity": "location"}
-   - In [Stuttgart]{"entity": "location"}
-   - [Hamburg]{"entity": "location"}
+    - Wie ist das [Wetter]{"entity": "selection"}?
+    - Wie ist das [Wetter]{"entity": "selection"} im Moment?
 
-- intent: ask_current_temperature_without_location
+- intent: location
   examples: |
-    - Wie viel Grad hat es
-    - Wie warm ist es
-    - Ich möchte wissen wie warm es ist
-    - Wie ist die Temperatur
-  
-- intent: ask_current_temperature_in_location
-  examples: |
+    - Wie ist das Wetter in [Nürnberg]{"entity": "location"}
+    - Wie sieht es aus in [Kirchheim]{"entity": "location"}
+    - Wie ist es in [Berlin]{"entity": "location"}
+    - Und in [Hamburg]{"entity": "location"}
+    - Was ist mit [München]{"entity": "location"}
+    - In [Stuttgart]{"entity": "location"}
+    - In [Köln]{"entity": "location"}
+    - In [Warwerort]{"entity": "location"}
+    - In [Nebra]{"entity": "location"}
+    - In [Naxxar]{"entity": "location"}
+    - In [Neuberend]{"entity": "location"}
+    - [Nürtingen]{"entity": "location"}
+    - [Düsseldorf]{"entity": "location"}
+    - [Reutlingen]{"entity": "location"}
+    - [Ofterdingen]{"entity": "location"}
+    - [Freiburg]{"entity": "location"}
+    - [Neckartailfingen]{"entity": "location"}
+    - [Tübingen]{"entity": "location"}
+    - [Darmstadt]{"entity": "location"}
     - Wie hoch ist die Temperatur in [Nürnberg]{"entity": "location"} heute
     - Sag mir die Temperatur in [Kirchheim]{"entity": "location"}
     - Temperatur in [Berlin]{"entity": "location"}
@@ -39,14 +46,13 @@ nlu:
     - Wie viel Grad Celsius hat es in [München]{"entity": "location"}
     - Wie in [Stuttgart]{"entity": "location"}
     - Und in [Nürtingen]{"entity": "location"}
-    - In [Tübingen]{"entity": "location"}
+    - In [Düsseldorf]{"entity": "location"}
     - Temperatur in [Reutlingen]{"entity": "location"}
     - Wie warm ist es in [Ofterdingen]{"entity": "location"}
     - Wie heiss ist es in [Freiburg]{"entity": "location"}
     - Ich würde gerne die Temperatur in [Neckartailfingen]{"entity": "location"} wissen
     - Wie ist die Temperatur in [Tübingen]{"entity": "location"}
     - Was ist mit [Darmstadt]{"entity": "location"}
-
 
 - intent: goodbye
   examples: |
@@ -59,20 +65,36 @@ nlu:
 
 - intent: affirm
   examples: |
-    - Ja
-    - J
-    - In der Tat
-    - Das ist korrekt
-    - Das klingt gut
+    - richtig
     - Korrekt
+    - ja
+    - äh ja
+    - ähm ja
+    - ja klopfen
+    - das ist richtig
+    - ja ja
+    - richtig
+    - jo
+    - yo
+    - ja richtig
+    - Genau so
+    - jap
 
 - intent: deny
   examples: |
     - Nein
-    - N
+    - Nope
+    - Never
+    - Ne
+    - Nee
+    - No
+    - Ich glaube nicht
+    - Ich denke nicht
+    - äh nein
     - Niemals
     - Das glaube ich nicht
     - Nicht wirklich
+    - nein danke
 
 - intent: bot_challenge
   examples: |
@@ -96,7 +118,6 @@ nlu:
     - Kann ich einen Hamburger bekommen?
     - Kann YouTube sprechen?
     - Können Sie mich zurückrufen?
-    - Kannst du mir das Passwort deines Rechenzentrums geben?
     - Kannst du mir das Passwort deines Rechenzentrums geben?
     - Kannst du Sandwiches machen?
     - Kannst du mir bitte einen Uber schicken
