@@ -11,11 +11,17 @@ nlu:
 - intent: ask_weather_without_location
   examples: |
    - Wie ist das Wetter 
+   - Wie sieht es aus
 
 - intent: ask_weather_in_location
   examples: |
    - Wie ist das Wetter in [Köln]{"entity": "location"}
+   - Wie sieht es aus in [Reutlingen]{"entity": "location"}
    - Wie ist es in [Frankfurt]{"entity": "location"}
+   - Und in [Darmstadt]{"entity": "location"}
+   - Was ist mit [Tübingen]{"entity": "location"}
+   - In [Stuttgart]{"entity": "location"}
+   - [Hamburg]{"entity": "location"}
 
 - intent: ask_current_temperature_without_location
   examples: |
@@ -66,7 +72,6 @@ nlu:
     - N
     - Niemals
     - Das glaube ich nicht
-    - Auf gar keinen Fall
     - Nicht wirklich
 
 - intent: bot_challenge
@@ -75,3 +80,53 @@ nlu:
     - Bist du ein Mensch?
     - Rede ich mit einem Bot?
     - Rede ich mit einem Mensch?
+
+- intent: out_of_scope
+  examples: |
+    - was ist die Quadratwurzel aus 5
+    - was ist der Sinn des Lebens
+    - Der Kühlschrank läuft nicht
+    - mein Fernseher funktioniert nicht
+    - Ich möchte eine Pizza
+    - meine Waschmaschine funktioniert nicht
+    - welches Jahr ist es
+    - bestelle eine Pizza
+    - Ich möchte eine Pizza bestellen
+    - erzähl mir einen Witz
+    - Kann ich einen Hamburger bekommen?
+    - Kann YouTube sprechen?
+    - Können Sie mich zurückrufen?
+    - Kannst du mir das Passwort deines Rechenzentrums geben?
+    - Kannst du mir das Passwort deines Rechenzentrums geben?
+    - Kannst du Sandwiches machen?
+    - Kannst du mir bitte einen Uber schicken
+    - ofif fsdfafsfs
+
+- intent: thank_you
+  examples: |
+    - danke auf Wiedersehen
+    - okay danke auf Wiedersehen
+    - danke auf Wiedersehen
+    - ähm okay danke auf Wiedersehen
+    - Danke.
+    - Und das ist alles. Danke und auf Wiedersehen.
+    - Okay, danke.
+    - Danke.
+    - Danke, auf Wiedersehen.
+    - Danke und auf Wiedersehen.
+    - Danke!
+    - Fantastisch, du bist ein guter Bot!
+    - Großartig!
+    - Ich verstehe, danke.
+    - Oh, das ist gut!
+    - Das ist gut :-)
+    - Danke
+    - Gute Arbeit, Bot
+    - super
+    - danke für die Hilfe
+    - danke
+    - danke!
+    - Dankeschön
+    - Dankeschön
+    - danke
+    - danke für die Informationen
