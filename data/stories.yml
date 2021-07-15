@@ -11,41 +11,13 @@ stories:
     entities:
     - location: "Ofterdingen"
   - action: weather_action
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: weather check 2
   steps:
   - intent: ask_weather_in_location
     entities:
-    - location: "Ofterdingen"
+    - location: "Köln"
   - action: weather_action
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: greet weather check 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_weather_without_location
-  - action: utter_ask_location
-  - intent: ask_weather_in_location
-    entities:
-    - location: "Ofterdingen"
-  - action: weather_action
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: greet weather check 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_weather_in_location
-    entities:
-    - location: "Reutlingen"
-  - action: weather_action
-  - intent: goodbye
-  - action: utter_goodbye
 
 #--- Temperature ---#
 
@@ -57,41 +29,13 @@ stories:
     entities:
     - location: "Ofterdingen"
   - action: current_temperature_action
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: current temperature check 2
   steps:
   - intent: ask_current_temperature_in_location
     entities:
-    - location: "Ofterdingen"
+    - location: "Köln"
   - action: current_temperature_action
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: greet current temperature check 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_current_temperature_without_location
-  - action: utter_ask_location
-  - intent: ask_current_temperature_in_location
-    entities:
-    - location: "Ofterdingen"
-  - action: current_temperature_action
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: greet current temperature check 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_current_temperature_in_location
-    entities:
-    - location: "Reutlingen"
-  - action: current_temperature_action
-  - intent: goodbye
-  - action: utter_goodbye
 
 # Add stories for humidity
 # Add stories for clouds, sunny ...
