@@ -13,10 +13,20 @@ nlu:
     - Wie ist die [Temperatur]{"entity": "selection"}?
     - Welche [Temperatur]{"entity": "selection"} hat es?
 
-- intent: weather
+- intent: wind_velocity
+  examples: |
+    - Wie stark ist die [Windgeschwindigkeit]{"entity": "selection"}?
+    - Welche [Windgeschwindigkeit]{"entity": "selection"} hat es?
+
+- intent: humidity
+  examples: |
+    - Wie ist die [Luftfeuchtigkeit]{"entity": "selection"}?
+    - Wie ist die [Luftfeuchtigkeit]{"entity": "selection"} im Moment?
+
+- intent: humidity
   examples: |
     - Wie ist das [Wetter]{"entity": "selection"}?
-    - Wie ist das [Wetter]{"entity": "selection"} im Moment?
+    - Wie ist der [Wetterbericht]{"entity": "selection"} im Moment?
 
 - intent: location
   examples: |

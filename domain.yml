@@ -3,6 +3,8 @@ version: "2.0"
 intents:
   - location
   - temperature
+  - humidity
+  - wind_velocity
   - weather
   - greet
   - inform
@@ -13,7 +15,6 @@ intents:
   - nlu_fallback
   - thank_you
   - out_of_scope
-
 
 entities:
   - location
@@ -41,11 +42,18 @@ responses:
   - text: "Hallo. Was genau möchten Sie wissen?"
     buttons:
     -
-      title: "Aktuelle Temperatur"
+      title: "Temperatur"
       payload: /temperature{{"selection":"Temperatur"}}
     -
-      title: "Temperatur (Details)"
+      title: "Windgeschwindigkeit"
+      payload: /wind_velocity{{"selection":"Windgeschwindigkeit"}}
+    -
+      title: "Luftfeuchtigkeit"
+      payload: /humidity{{"selection":"Luftfeuchtigkeit"}}
+    -
+      title: "Wetterbericht"
       payload: /weather{{"selection":"Wetter"}}
+
   #- text: "Freut mich Sie kennen zu lernen. Was genau möchten Sie wissen?"
   #- text: "Hallo, schön, Sie zu sehen. Was genau möchten Sie wissen?"
 

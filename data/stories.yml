@@ -1,7 +1,7 @@
 version: "2.0"
 
 stories:
-- story: weather check 1
+- story: temperature check
   steps:
   - intent: temperature
     entities:
@@ -12,7 +12,29 @@ stories:
     - location: "Ofterdingen"
   - action: weather_action
 
-- story: temperature check 1
+- story: wind velocity check
+  steps:
+  - intent: wind_velocity
+    entities:
+    - selection: "Luftfeuchtigkeit"
+  - action: utter_ask_location
+  - intent: location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+
+- story: humidity check
+  steps:
+  - intent: humidity
+    entities:
+    - selection: "Luftfeuchtigkeit"
+  - action: utter_ask_location
+  - intent: location
+    entities:
+    - location: "Ofterdingen"
+  - action: weather_action
+
+- story: weather check
   steps:
   - intent: weather
     entities:
