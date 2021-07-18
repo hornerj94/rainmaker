@@ -23,7 +23,7 @@ nlu:
     - Wie ist die [Luftfeuchtigkeit]{"entity": "selection"}?
     - Wie ist die [Luftfeuchtigkeit]{"entity": "selection"} im Moment?
 
-- intent: humidity
+- intent: weather
   examples: |
     - Wie ist das [Wetter]{"entity": "selection"}?
     - Wie ist der [Wetterbericht]{"entity": "selection"} im Moment?
