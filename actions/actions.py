@@ -59,17 +59,22 @@ class WeatherAction(Action):
 
                 for i in messages:         
                     dispatcher.utter_message(text=i)
-                    
+                
+                print("http://openweathermap.org/img/wn/" \
+                        + data['weather'][0]['icon'] + "@2x.png")
+
                 dispatcher.utter_message(
-                    image="http://openweathermap.org/img/wn/02n@2x.png")
+                    image = "http://openweathermap.org/img/wn/" \
+                        + data['weather'][0]['icon'] + "@2x.png")
                 
                 response = data['weather'][0]['description']
                 
         dispatcher.utter_message(text=response)
 
-        return [SlotSet('location', location)]
+        return [SlotSet('location', location), SlotSet('selection', None)]
 
 #------------------------------------------------------------------------------
+
     def getWindVelocityInKmH(self, velocityMeterPerSecond: int) -> int:
         velocityMeterPerSecond = velocityMeterPerSecond
         velocityMeterPerHour = velocityMeterPerSecond * 60 * 60
