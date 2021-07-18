@@ -32,10 +32,13 @@ actions:
 - utter_greet
 - utter_ask_location
 - utter_did_that_help
+- utter_something_else
 - utter_goodbye
 - utter_iamabot
+- utter_out_of_scope
+- utter_noworries
+- utter_default
 - weather_action
-- current_temperature_action
 
 responses:
   utter_greet:
@@ -53,16 +56,54 @@ responses:
     -
       title: "Wetterbericht"
       payload: /weather{{"selection":"Wetter"}}
-
-  #- text: "Freut mich Sie kennen zu lernen. Was genau möchten Sie wissen?"
-  #- text: "Hallo, schön, Sie zu sehen. Was genau möchten Sie wissen?"
+  - text: "Freut mich Sie kennen zu lernen. Was genau möchten Sie wissen?"
+    buttons:
+    -
+      title: "Temperatur"
+      payload: /temperature{{"selection":"Temperatur"}}
+    -
+      title: "Windgeschwindigkeit"
+      payload: /wind_velocity{{"selection":"Windgeschwindigkeit"}}
+    -
+      title: "Luftfeuchtigkeit"
+      payload: /humidity{{"selection":"Luftfeuchtigkeit"}}
+    -
+      title: "Wetterbericht"
+      payload: /weather{{"selection":"Wetter"}}
+  - text: "Hallo, schön, Sie zu sehen. Was genau möchten Sie wissen?"
+    buttons:
+    -
+      title: "Temperatur"
+      payload: /temperature{{"selection":"Temperatur"}}
+    -
+      title: "Windgeschwindigkeit"
+      payload: /wind_velocity{{"selection":"Windgeschwindigkeit"}}
+    -
+      title: "Luftfeuchtigkeit"
+      payload: /humidity{{"selection":"Luftfeuchtigkeit"}}
+    -
+      title: "Wetterbericht"
+      payload: /weather{{"selection":"Wetter"}}
 
   utter_ask_location:
   - text: "An welchem Ort?"
   - text: "Wo?"
   
-  utter_did_that_help:
-  - text: "Hat Ihnen das geholfen?"
+  utter_something_else:
+  - text: "Möchten sie noch etwas wissen?"
+    buttons:
+    -
+      title: "Temperatur"
+      payload: /temperature{{"selection":"Temperatur"}}
+    -
+      title: "Windgeschwindigkeit"
+      payload: /wind_velocity{{"selection":"Windgeschwindigkeit"}}
+    -
+      title: "Luftfeuchtigkeit"
+      payload: /humidity{{"selection":"Luftfeuchtigkeit"}}
+    -
+      title: "Wetterbericht"
+      payload: /weather{{"selection":"Wetter"}}
 
   utter_goodbye:
   - text: "Tschüss"
@@ -72,14 +113,17 @@ responses:
   - text: "Tschüss, auf Wiedersehen"
   - text: "Ciao"
 
+  utter_did_that_help:
+  - text: "Hat Ihnen das geholfen?"
+
   utter_iamabot:
   - text: "Ich bin ein R-O-B-O-T-E-R."
 
   utter_out_of_scope:
   - text: Tut mir leid, ich bin nicht sicher, wie ich darauf antworten soll.
 
-  utter_noworries:
-  - text: Kein Problem. Haben Sie weitere Fragen?
+#  utter_noworries:
+#  - text: Kein Problem. Haben Sie weitere Fragen?
 
   utter_default:
   - text: Das habe ich nicht ganz verstanden. Könnten Sie es anders formulieren?
