@@ -11,17 +11,19 @@ stories:
     entities:
     - location: "Ofterdingen"
   - action: weather_action
+  - action: utter_something_else
 
 - story: wind velocity check
   steps:
   - intent: wind_velocity
     entities:
-    - selection: "Luftfeuchtigkeit"
+    - selection: "Windgeschwindigkeit"
   - action: utter_ask_location
   - intent: location
     entities:
-    - location: "Ofterdingen"
+    - location: "Stuttgart"
   - action: weather_action
+  - action: utter_something_else
 
 - story: humidity check
   steps:
@@ -31,8 +33,9 @@ stories:
   - action: utter_ask_location
   - intent: location
     entities:
-    - location: "Ofterdingen"
+    - location: "Köln"
   - action: weather_action
+  - action: utter_something_else
 
 - story: weather check
   steps:
@@ -42,8 +45,6 @@ stories:
   - action: utter_ask_location
   - intent: location
     entities:
-    - location: "Ofterdingen"
+    - location: "Reutlingen"
   - action: weather_action
-
-# Add stories for humidity
-# Add stories for clouds, sunny ...
+  - action: utter_something_else
